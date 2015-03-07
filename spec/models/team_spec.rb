@@ -5,19 +5,14 @@ RSpec.describe Team, type: :model do
     @project = Project.create(name: 'Code a blog')
     @user_one = User.create(first_name: "Ethel", email: "ethel@gmail.com", password: "password", password_confirmation: "password")
     @user_two = User.create(first_name: "Erika", email: "erika@hotmail.com", password: "password", password_confirmation: "password")
-    @team = Team.new
-    @team.project_id = @project.id
-    @team.users << @user_one
-    @team.users << @user_two
-    @team.save
+    @team = Team.create(project_id: @project.id, users: [@user_one, @user_two])
   end
 
   it 'has a project' do
-    expect(@team.project).not_to eq(nil)
+    expect(@team.project).to eq(@project)
   end
 
   it 'has users' do
-    # binding.pry
     expect(@team.users).to include(@user_one)
     expect(@team.users).to include(@user_two)
   end
