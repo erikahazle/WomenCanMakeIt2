@@ -17,4 +17,13 @@ RSpec.describe Project, type: :model do
     end
     expect(@project.tutorial.path).not_to eq(nil)
   end
+
+  it 'can take a markdown file' do
+    expect(@project.tutorial.path).to eq(nil)
+    File.open('./spec/fixtures/test.md') do |f|
+      @project.tutorial = f
+      @project.save
+    end
+    expect(@project.tutorial.path).not_to eq(nil)
+  end
 end
