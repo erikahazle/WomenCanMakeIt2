@@ -11,6 +11,20 @@ Rails.application.routes.draw do
 
   get 'static_pages/contact'
 
+
+  root 'static_pages#home'
+  
+
+  get '/about' => 'static_pages#about'
+
+  get '/features' => 'static_pages#features'
+
+  get '/build_a_blog' => 'static_pages#build_a_blog'
+
+  get '/build_ecommerce_site' => 'static_pages#build_ecommerce_site'
+
+  get '/contact' => 'static_pages#contact'
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
