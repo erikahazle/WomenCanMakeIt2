@@ -16,6 +16,7 @@ RSpec.describe Project, type: :model do
       @project.save
     end
     expect(@project.tutorial.path).not_to eq(nil)
+    expect(Paperclip.io_adapters.for(@project.tutorial).read).to eq('Code a blog')
   end
 
   it 'can take a markdown file' do
