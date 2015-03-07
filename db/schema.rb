@@ -16,6 +16,16 @@ ActiveRecord::Schema.define(version: 20150307165108) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "projects", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "tutorial_file_name"
+    t.string   "tutorial_content_type"
+    t.integer  "tutorial_file_size"
+    t.datetime "tutorial_updated_at"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "email",                        default: "", null: false
