@@ -31,6 +31,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.select :type, [['Mentee', 0], ['Mentor', 1]] %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

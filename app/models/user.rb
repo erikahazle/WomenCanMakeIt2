@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  enum type: [:mentee, :mentor]
+
   has_many :memberships
   has_many :teams, through: :memberships
 
@@ -9,6 +11,8 @@ class User < ActiveRecord::Base
 
   has_attached_file :profile_picture, :styles => { :medium => "300x300#", :thumb => "100x100#" }, :default_url => "/images/:style/missingprofilepicture.png"
   validates_attachment_content_type :profile_picture, :content_type => /\Aimage\/.*\Z/
+
+  self.inheritance_column = nil
 
   def current_team
     self.memberships.find(&:active).team
@@ -21,5 +25,4 @@ class User < ActiveRecord::Base
   def current_project
     current_team.project
   end
-
 end
