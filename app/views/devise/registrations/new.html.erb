@@ -38,7 +38,7 @@
 
   <div class="field">
     <%= f.label :project_interests %>
-    <%= collection_check_boxes(:user, :test_ids, Project.all, :id, :name) %>
+    <%= collection_check_boxes(:user, :interested_project_ids, Project.all, :id, :name) %>
   </div>
 
   <div class="actions">

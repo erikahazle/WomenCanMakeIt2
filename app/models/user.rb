@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :memberships
   has_many :teams, through: :memberships
 
-  has_and_belongs_to_many :tests, foreign_key: 'user_id', class_name: 'Project'
+  has_and_belongs_to_many :interested_projects, foreign_key: 'user_id', class_name: 'Project'
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
