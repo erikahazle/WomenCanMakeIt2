@@ -4,11 +4,14 @@
       <%= link_to "Hello, #{current_user.first_name}!", controller: "static_pages", action: "dashboard" %>
     </li>
     <li>
-      <%= link_to('Sign out', destroy_user_session_path, :method => :delete) %>        
+      <%= link_to('Sign out', destroy_user_session_path, :method => :delete) %>    
     </li>
   <% else %>
     <li>
       <%= link_to('Sign in', new_user_session_path)  %>  
+    </li>
+    <li>
+      <%= link_to('Sign up', new_user_registration_path)  %>
     </li>
   <% end %>
 </section>
