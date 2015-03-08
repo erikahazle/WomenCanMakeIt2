@@ -37,6 +37,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :comm_pref, 'Communication preference' %><br />
+    <%= f.select :comm_pref, [['Online only', 'online'], ['Face-to-face', 'face']] %>
+  </div>
+
+  <div class="field">
     <%= f.label :project_interests %>
     <br>
     <%= collection_check_boxes(:user, :interested_project_ids, Project.all, :id, :name) %>
