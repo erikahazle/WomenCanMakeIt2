@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_attached_file :profile_picture, :styles => { :medium => "300x300#", :thumb => "100x100#" }, :default_url => "/images/:style/missingprofilepicture.png"
-  validates_attachment_content_type :profile_picture, :content_type => /\Aimage\/.*\Z/  
+  validates_attachment_content_type :profile_picture, :content_type => /\Aimage\/.*\Z/
+
+  def current_team
+    self.memberships.find(&:active).team
+  end
 
 end
