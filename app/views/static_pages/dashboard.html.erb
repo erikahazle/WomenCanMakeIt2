@@ -8,6 +8,10 @@
     <h2><%= current_user.current_project.name %></h2>
   <% else %>
     You haven't got a team yet! In the meantime, work on:
-    <h2><%= current_user.interested_projects.first.name %></h2>
+    <h2><%= @interested_project_title %></h2>
+
+    <% @interested_project_content.each do |line| %>
+      <p><%= line %></p>
+    <% end %>
   <% end %>
 </section>

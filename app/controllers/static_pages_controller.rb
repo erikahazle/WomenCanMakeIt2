@@ -11,6 +11,10 @@ class StaticPagesController < ApplicationController
   end
 
   def build_a_blog
+    project = Project.where(name: "Build a blog").first
+    lines = IO.readlines(project.tutorial.path)
+    @title = lines.shift
+    @content = lines
   end
 
   def build_ecommerce_site
@@ -20,5 +24,9 @@ class StaticPagesController < ApplicationController
   end
 
   def dashboard
+    @interested_project = current_user.interested_projects.first
+    interested_project_lines = IO.readlines(@interested_project.tutorial.path)
+    @interested_project_title = interested_project_lines.shift
+    @interested_project_content = interested_project_lines
   end
 end

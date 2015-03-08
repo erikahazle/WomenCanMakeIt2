@@ -1,2 +1,5 @@
-<h1>StaticPages#build_a_blog</h1>
-<p>Find me in app/views/static_pages/build_a_blog.html.erb</p>
+<h2><%= @title %></h2>
+
+<% @content.each do |line| %>
+  <p><%= line %></p>
+<% end %>

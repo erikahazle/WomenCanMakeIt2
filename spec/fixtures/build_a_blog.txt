@@ -1,1 +1,1 @@
-Code a blog
+Build a blog
