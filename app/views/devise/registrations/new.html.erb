@@ -38,11 +38,12 @@
 
   <div class="field">
     <%= f.label :project_interests %>
+    <br>
     <%= collection_check_boxes(:user, :interested_project_ids, Project.all, :id, :name) %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: "btn btn-default" %>
   </div>
 <% end %>
 

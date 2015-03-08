@@ -43,3 +43,26 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+.field {
+  margin-top: 1em;
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 300px;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+
+  input[type="checkbox"]:not(:first-of-type) {
+    margin-left: 15px;
+  }
+}
+
+.actions {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
