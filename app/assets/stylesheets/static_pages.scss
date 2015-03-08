@@ -14,11 +14,6 @@ body {
   text-align: center;
 }
 
-.wrapper {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
 .login-items {
   display: inline-block;
   float: right;
@@ -38,4 +33,13 @@ body {
   header {
     margin-bottom: 1em;
   }
+}
+
+.featured-image-1 {
+  width: 500px; 
+  height: 500px; 
+  background-image: url('../assets/girls-in-tech.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
