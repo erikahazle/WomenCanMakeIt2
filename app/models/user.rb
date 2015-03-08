@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   self.inheritance_column = nil
 
   def current_team
-    self.memberships.find(&:active).team
+    self.memberships.any?(&:active) ? self.memberships.find(&:active).team : nil
   end
 
   def projects
@@ -26,5 +26,13 @@ class User < ActiveRecord::Base
 
   def current_project
     current_team.project
+  end
+
+  def current_mentor
+    current_team.users.find { |user| type == 1 }
+  end
+
+  def current_co_student
+    current_team.users.find { |user| type == 0 }
   end
 end

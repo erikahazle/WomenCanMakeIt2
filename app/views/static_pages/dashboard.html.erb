@@ -1,3 +1,13 @@
 <section class="project-container">
-  <%= current_user.email %>
+  <% if current_user.current_team %>
+    <section class="team-info">
+      <article class="team-member">You: <%= current_user.first_name %></article>
+      <article class="team-member">Your mentor: <%= current_user.current_mentor.first_name %></article>
+      <article class="team-member">Your buddy: <%= current_user.current_co_student.first_name %></article>
+    </section>
+    <h2><%= current_user.current_project.name %></h2>
+  <% else %>
+    You haven't got a team yet! In the meantime, work on:
+    <h2><%= current_user.interested_projects.first.name %></h2>
+  <% end %>
 </section>
