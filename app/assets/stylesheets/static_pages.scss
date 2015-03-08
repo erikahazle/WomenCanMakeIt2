@@ -4,10 +4,19 @@
 
 body {
   margin: 0;
+  padding-top: 0;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.jumbotron {
+  padding-top: 0;
+
+  .container {
+    padding-top: 45px;
+  }
 }
 
 .project {
