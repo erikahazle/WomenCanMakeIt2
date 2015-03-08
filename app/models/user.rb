@@ -14,4 +14,12 @@ class User < ActiveRecord::Base
     self.memberships.find(&:active).team
   end
 
+  def projects
+    self.teams.map(&:project)
+  end
+
+  def current_project
+    current_team.project
+  end
+
 end
