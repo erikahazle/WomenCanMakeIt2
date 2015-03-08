@@ -60,15 +60,25 @@
       <div class="row">
         <div class="col-lg-6 project">
           <img class="img-circle" src="/assets/trav_img.jpg" style="width: 140px; height: 140px;">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <h2>Project 1: Blog It</h2>
+          <p>Seen a cool blog and wondered how it was made?</p>
+          <p>Why not make one yourself from scratch!</p>
+          <p>This project takes you on the journey of making a blog, putting your HTML, CSS, AND JavaScript skills to use.</p>
+          <br>
+          <p>
+            <%= link_to "Learn more", {controller: "static_pages", action: "build_a_blog"}, class: "btn btn-default" %>
+          </p>
         </div><!-- /.col-lg-6 -->
         <div class="col-lg-6 project">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <img class="img-circle" src="/assets/ecomm_img.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <h2>Project 2: Ecommerce it</h2>
+          <p>Ever wondered how to make your own transactional website?</p>
+          <p>Perhaps you're thinking about setting up your own business?</p>
+          <p>This project will help you build your own eCommerce site, complete with store front, basket, and checkout, all from scratch!</p>
+          <br>
+          <p>
+            <%= link_to "Learn more", {controller: "static_pages", action: "build_ecommerce_site"}, class: "btn btn-default" %>
+          </p>
         </div><!-- /.col-lg-6 -->
       </div><!-- /.row -->
 
