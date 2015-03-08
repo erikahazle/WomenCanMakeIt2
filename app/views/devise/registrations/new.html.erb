@@ -36,6 +36,13 @@
     <%= f.select :type, [['Mentee', 0], ['Mentor', 1]] %>
   </div>
 
+  <div class="field">
+    <%= f.label :project_interests %>
+    <% Project.all.each do |project| %>
+      <%= check_box_tag "user[project_interests][]", project.id, self.project_interests.include?(project.id) %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
