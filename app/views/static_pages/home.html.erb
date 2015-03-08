@@ -1,32 +1,30 @@
-<section class="wrapper">
-  <h1>Home</h1>
+<h1>Home</h1>
 
-  <section class="about">
-    Here goes some information about our project.
-  </section>
-
-  <section class="project-container">
-    <article class="project">
-      <header>Build a blog</header>
-      <section class="project-description">
-        Here goes some information about building a blog.
-      </section>
-      <a href="/build_a_blog" class="learn-more">Learn more</a>
-    </article>
-
-    <article class="project">
-      <header>Build an e-commerce site</header>
-      <section class="project-description">
-        And some blurb about building an e-commerce site.
-      </section>
-      <a href="/build_a_blog" class="learn-more">Learn more</a>
-    </article>
-  </section>
-
-  <% if user_signed_in? %>
-    <section class="sign-up">
-      <header>Interested?</header>
-      <%= link_to('Sign up', new_user_registration_path)  %>
-    </section>
-  <% end %>
+<section class="about">
+  Here goes some information about our project.
 </section>
+
+<section class="project-container">
+  <article class="project">
+    <header>Build a blog</header>
+    <section class="project-description">
+      Here goes some information about building a blog.
+    </section>
+    <a href="/build_a_blog" class="learn-more">Learn more</a>
+  </article>
+
+  <article class="project">
+    <header>Build an e-commerce site</header>
+    <section class="project-description">
+      And some blurb about building an e-commerce site.
+    </section>
+    <a href="/build_a_blog" class="learn-more">Learn more</a>
+  </article>
+</section>
+
+<% if user_signed_in? %>
+  <section class="sign-up">
+    <header>Interested?</header>
+    <%= link_to('Sign up', new_user_registration_path)  %>
+  </section>
+<% end %>
