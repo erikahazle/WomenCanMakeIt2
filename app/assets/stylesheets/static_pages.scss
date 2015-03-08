@@ -12,7 +12,33 @@ body {
 
 .wrapper {
   max-width: 700px;
-  margin: 0 auto; 
+  margin: 0 auto;
+}
+
+.navigation-container {
+  background-color: #ddd;
+
+  .main-navigation {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 10px 0;
+
+    li {
+      list-style: none;
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    .login-items {
+      display: inline-block;
+      float: right;
+
+      li {
+        margin-left: 8px;
+        margin-right: 0;
+      }
+    }
+  }
 }
 
 .about,

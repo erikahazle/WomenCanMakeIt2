@@ -8,8 +8,23 @@
 </head>
 <body>
 
+<section class="navigation-container">
+  <nav class="main-navigation">
+    <li>
+      <%= link_to "Home", controller: "static_pages", action: "home" %>
+    </li>
+    <li>
+      <%= link_to "About", controller: "static_pages", action: "about" %>
+    </li>
+    <li>
+      <%= link_to "Features", controller: "static_pages", action: "features" %>
+    </li>
+      
+    <%= render 'devise/menu/login_items' %>
+  </nav>
+</section>
+
 <section class="wrapper">
-  
   <%= yield %>
 </section>
 

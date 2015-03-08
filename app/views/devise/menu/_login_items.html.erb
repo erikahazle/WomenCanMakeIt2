@@ -1,0 +1,14 @@
+<section class="login-items">
+  <% if user_signed_in? %>
+    <li>
+      <%= link_to "Hello, #{current_user.first_name}!", controller: "static_pages", action: "dashboard" %>
+    </li>
+    <li>
+      <%= link_to('Sign out', destroy_user_session_path, :method => :delete) %>        
+    </li>
+  <% else %>
+    <li>
+      <%= link_to('Sign in', new_user_session_path)  %>  
+    </li>
+  <% end %>
+</section>
