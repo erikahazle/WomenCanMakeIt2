@@ -11,7 +11,7 @@ protected
       u.permit(:email, :password)
     end
     devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit(:profile_picture, :type, :first_name, :email, :password, :password_confirmation)
+      u.permit(:profile_picture, :type, {test_ids: []}, :first_name, :email, :password, :password_confirmation)
     end
     devise_parameter_sanitizer.for(:account_update) do |u|
       u.permit(:profile_picture, :first_name, :email, :password, :password_confirmation,:current_password)

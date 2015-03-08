@@ -17,6 +17,3 @@ File.open('./spec/fixtures/build_an_ecommerce_site.txt') do |f|
   ecommerce_project.tutorial = f
   ecommerce_project.save
 end
-
-User.create(first_name: 'Ethel', email: 'ethel@gmail.com', password: 'password', password_confirmation: 'password')
-User.create(first_name: 'Erika', email: 'erika@hotmail.com', password: 'password', password_confirmation: 'password')

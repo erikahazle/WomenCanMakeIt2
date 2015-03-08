@@ -1,11 +1,10 @@
 class User < ActiveRecord::Base
-  enum type: [:mentee, :mentor]
+  # enum type: [:mentee, :mentor]
 
   has_many :memberships
   has_many :teams, through: :memberships
 
-  has_many :project_interests
-  has_many :projects, through: :project_interests
+  has_and_belongs_to_many :tests, foreign_key: 'user_id', class_name: 'Project'
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
