@@ -1,26 +1,30 @@
-<section class="project-container">
-  <% if current_user.current_team %>
-    <section class="team-info">
-      <article class="team-member">You: <%= current_user.first_name %></article>
-      <% if current_user.type == 0 %>
-        <article class="team-member">Your mentor: <%= current_user.current_mentor.first_name %></article>
-        <article class="team-member">Your buddy: <%= current_user.current_co_student.first_name %></article>
-      <% else %>
-        Your mentees:
-        <% current_user.current_mentees.each do |mentee| %>
-          <article class="team-member">
-            <%= mentee.first_name %>
-          </article>
-        <% end %>
-      <% end %>
-    </section>
-    <h2><%= current_user.current_project.name %></h2>
-  <% else %>
-    You haven't got a team yet! In the meantime, work on:
-    <h2><%= @interested_project_title %></h2>
+<div class="hero"></div>
 
-    <% @interested_project_content.each do |line| %>
-      <p><%= line %></p>
+<div class="container">
+  <section class="project-container">
+    <% if current_user.current_team %>
+      <section class="team-info">
+        <article class="team-member">You: <%= current_user.first_name %></article>
+        <% if current_user.type == 0 %>
+          <article class="team-member">Your mentor: <%= current_user.current_mentor.first_name %></article>
+          <article class="team-member">Your buddy: <%= current_user.current_co_student.first_name %></article>
+        <% else %>
+          Your mentees:
+          <% current_user.current_mentees.each do |mentee| %>
+            <article class="team-member">
+              <%= mentee.first_name %>
+            </article>
+          <% end %>
+        <% end %>
+      </section>
+      <h2><%= current_user.current_project.name %></h2>
+    <% else %>
+      You haven't got a team yet! In the meantime, work on:
+      <h2><%= @interested_project_title %></h2>
+
+      <% @interested_project_content.each do |line| %>
+        <p><%= line %></p>
+      <% end %>
     <% end %>
-  <% end %>
-</section>
+  </section>
+</div>
