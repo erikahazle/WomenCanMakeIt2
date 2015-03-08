@@ -29,10 +29,14 @@ class User < ActiveRecord::Base
   end
 
   def current_mentor
-    current_team.users.find { |user| type == 1 }
+    current_team.users.find { |user| user.type == 1 }
   end
 
   def current_co_student
-    current_team.users.find { |user| type == 0 }
+    current_team.users.find { |user| user.type == 0 }
+  end
+
+  def current_mentees
+    current_team.users.select { |user| user.type == 0 }
   end
 end
