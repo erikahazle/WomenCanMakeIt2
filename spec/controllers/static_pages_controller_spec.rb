@@ -25,6 +25,11 @@ RSpec.describe StaticPagesController, type: :controller do
 
   describe "GET #build_a_blog" do
     it "returns http success" do
+      project = Project.create(name: 'Build a blog')
+      File.open('./spec/fixtures/build_a_blog.txt') do |f|
+        project.tutorial = f
+        project.save
+      end
       get :build_a_blog
       expect(response).to have_http_status(:success)
     end
