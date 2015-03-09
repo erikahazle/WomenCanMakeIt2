@@ -6,13 +6,15 @@
       <section class="team-info">
         <article class="team-member">You: <%= current_user.first_name %></article>
         <% if current_user.type == 0 %>
-          <article class="team-member">Your mentor: <%= current_user.current_mentor.first_name %></article>
-          <article class="team-member">Your buddy: <%= current_user.current_co_student.first_name %></article>
+          <article class="team-member">Your mentor: <a href="mailto:#{current_user.current_mentor.email}"><%= current_user.current_mentor.first_name %></a></article>
+          <article class="team-member">Your buddy: <a href="mailto:#{current_user.current_co_student.email}"><%= current_user.current_co_student.first_name %></a></article>
         <% else %>
           Your mentees:
           <% current_user.current_mentees.each do |mentee| %>
             <article class="team-member">
-              <%= mentee.first_name %>
+              <a href="mailto:#{mentee.email}">
+                <%= mentee.first_name %>
+              </a>
             </article>
           <% end %>
         <% end %>
